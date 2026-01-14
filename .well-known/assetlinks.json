@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.katarsis_dev.twa",
+      "sha256_cert_fingerprints": [
+        "AE:94:21:9B:3C:9C:E7:9C:8A:04:E0:C7:EC:9B:45:91:F0:73:51:A6:99:79:B0:AF:1A:E5:A2:D7:30:03:77:EB"
+      ]
+    }
+  }
+]
