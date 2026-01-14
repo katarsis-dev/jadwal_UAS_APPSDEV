@@ -1,6 +1,6 @@
 let db;
 const request = indexedDB.open("JadwalDB", 1);
-
+alert("js deteksi");
 request.onerror = (e) => {
   alert("Gagal membuka database: " + e.target.error); // Pake alert biar keliatan di HP
 };
