@@ -1,13 +1,11 @@
 let db;
 const request = indexedDB.open("JadwalDB", 1);
-alert("js deteksi");
 request.onerror = (e) => {
   alert("Gagal membuka database: " + e.target.error); // Pake alert biar keliatan di HP
 };
 
 request.onsuccess = (e) => {
   db = e.target.result;
-  console.log("Database Ready");
 
   initApp();
 
@@ -264,16 +262,12 @@ function renderSchedules(rebuildFilter = false) {
   const getAllRequest = store.getAll();
   if (!listView || !emptyView) return;
 
-  // PROTEKSI: Jika DB belum siap, jangan lanjut
   if (!db) {
     console.warn("DB belum siap, mencoba lagi...");
     setTimeout(renderSchedules, 500);
     return;
   }
-  requestAction.onsuccess = () => {
-    alert("Berhasil simpan ke database!"); // Kalau ini muncul di HP, berarti DB aman
-    renderSchedules(true);
-  };
+
   getAllRequest.onsuccess = () => {
     const schedules = getAllRequest.result;
 
