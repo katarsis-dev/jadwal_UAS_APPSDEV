@@ -1,10 +1,3 @@
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("../../sw.js")
-    .then(() => console.log("Service Worker Registered"))
-    .catch((err) => console.error("SW Registration Failed", err));
-}
-
 const dbName = "JadwalDB";
 const dbVersion = 1;
 let db;

@@ -199,6 +199,16 @@
 
     <script src="assets/js/index.js"></script>
 
+    <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("./sw.js") // Titik satu artinya sejajar dengan index.html
+        .then((reg) => console.log("SW Registered! Scope:", reg.scope))
+        .catch((err) => console.error("SW Registration Failed", err));
+    });
+  }
+</script>
 </body>
 
 </html>
