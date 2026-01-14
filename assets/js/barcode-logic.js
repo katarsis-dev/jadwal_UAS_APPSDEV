@@ -6,7 +6,6 @@ request.onsuccess = (e) => {
   generateScheduleQR();
 };
 
-// --- BAGIAN 1: GENERATE QR ---
 async function generateScheduleQR() {
   const transaction = db.transaction(["jadwal_store"], "readonly");
   const store = transaction.objectStore("jadwal_store");
@@ -14,25 +13,37 @@ async function generateScheduleQR() {
 
   getAll.onsuccess = () => {
     const schedules = getAll.result;
-    if (schedules.length === 0) return;
+    if (schedules.length === 0) {
+      document.getElementById("qrcode").innerHTML =
+        '<p class="text-muted">Belum ada jadwal.</p>';
+      return;
+    }
 
     const qrContainer = document.getElementById("qrcode");
     qrContainer.innerHTML = "";
 
-    const cleanData = schedules.map(({ id, ...rest }) => rest);
-    const qrString = JSON.stringify(cleanData);
+    const optimizedData = schedules.map((item) => [
+      item.matkul,
+      item.hari,
+      item.semester,
+      item.jamMulai,
+      item.jamSelesai,
+      item.ruang,
+    ]);
+
+    const qrString = JSON.stringify(optimizedData);
+    console.log("Data QR (Terkornpresi):", qrString);
 
     new QRCode(qrContainer, {
       text: qrString,
-      width: 256,
-      height: 256,
+      width: 280,
+      height: 280,
       colorDark: "#000000",
       colorLight: "#ffffff",
       correctLevel: QRCode.CorrectLevel.L,
     });
   };
 }
-
 // --- BAGIAN 2: SCAN QR ---
 const html5QrCode = new Html5Qrcode("reader");
 
@@ -46,6 +57,7 @@ const onScanSuccess = (decodedText) => {
 
       if (Array.isArray(importedData)) {
         saveImportedData(importedData);
+        alert("Berhasil Mendapatkan Data!");
       } else {
         alert("Format QR Code tidak valid!");
       }

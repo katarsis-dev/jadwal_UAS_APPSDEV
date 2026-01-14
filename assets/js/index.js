@@ -1,8 +1,20 @@
-const dbName = "JadwalDB";
-const dbVersion = 1;
 let db;
+const request = indexedDB.open("JadwalDB", 1);
 
-const request = indexedDB.open(dbName, dbVersion);
+request.onerror = (e) => {
+  alert("Gagal membuka database: " + e.target.error); // Pake alert biar keliatan di HP
+};
+
+request.onsuccess = (e) => {
+  db = e.target.result;
+  console.log("Database Ready");
+
+  initApp();
+
+  if (document.getElementById("scheduleListView")) {
+    renderSchedules();
+  }
+};
 
 if ("Notification" in window) {
   Notification.requestPermission();
