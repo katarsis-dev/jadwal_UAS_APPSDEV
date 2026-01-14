@@ -1,4 +1,4 @@
-const CACHE_NAME = "jadwal-pwa-v1";
+const CACHE_NAME = "jadwal-pwa-v2";
 
 // Daftar file yang WAJIB disimpan biar bisa dibuka tanpa internet
 const urlsToCache = [
@@ -9,8 +9,8 @@ const urlsToCache = [
   "./assets/css/bootstrap.min.css",
   "./assets/css/bootstrap-icons.css",
   "./assets/css/style.css",
-  "./assets/css/fonts/bootstrap-icons.woff2",
-  "./assets/css/fonts/bootstrap-icons.woff",
+  "./assets/fonts/bootstrap-icons.woff2",
+  "./assets/fonts/bootstrap-icons.woff",
   "./assets/js/index.js",
   "./assets/js/barcode-logic.js",
   "./assets/js/bootstrap.bundle.min.js",
