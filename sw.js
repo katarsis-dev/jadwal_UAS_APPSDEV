@@ -20,9 +20,9 @@ const urlsToCache = [
   "./assets/js/worker.min.js",
   "./assets/js/tesseract-core-simd.wasm.js",
   "./assets/lang/ind.traineddata.gz",
+  "assets/icons/logo.png",
 ];
 
-// 1. Install Service Worker & Simpan semua asset ke Cache
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -33,7 +33,6 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
-// 2. Aktivasi & Hapus cache lama kalau ada update versi
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {

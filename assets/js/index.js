@@ -185,7 +185,7 @@ document.getElementById("inputMusic")?.addEventListener("change", function (e) {
     // Update URL audio yang sedang jalan
     const musicURL = URL.createObjectURL(file);
     alarmAudio.src = musicURL;
-    alert("Musik alarm berhasil diganti!");
+    alert("Suara alarm berhasil diganti!");
   };
 });
 
@@ -197,9 +197,9 @@ window.previewMusic = function () {
       setTimeout(() => {
         alarmAudio.pause();
         alarmAudio.currentTime = 0;
-      }, 5000); // Putar 5 detik aja buat tes
+      }, 5000);
     })
-    .catch((err) => alert("Klik di layar dulu atau pilih file musik!"));
+    .catch((err) => alert("Terjadi Error Coba pilih file musik!"));
 };
 
 function handleFormSubmit(e) {
@@ -603,9 +603,7 @@ function parseTextToForm(rawText) {
   );
   if (modalScan) modalScan.hide();
   renderSchedules(true);
-  alert(
-    `Berhasil! ${savedCount} Jadwal diimpor. Cek Console (F12) jika ada yang kurang pas.`
-  );
+  alert(`Berhasil! ${savedCount} Jadwal diimpor`);
 }
 function saveToDatabaseSilent(data) {
   const transaction = db.transaction(["jadwal_store"], "readwrite");
