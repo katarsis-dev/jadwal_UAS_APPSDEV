@@ -262,7 +262,18 @@ function renderSchedules(rebuildFilter = false) {
   const transaction = db.transaction(["jadwal_store"], "readonly");
   const store = transaction.objectStore("jadwal_store");
   const getAllRequest = store.getAll();
+  if (!listView || !emptyView) return;
 
+  // PROTEKSI: Jika DB belum siap, jangan lanjut
+  if (!db) {
+    console.warn("DB belum siap, mencoba lagi...");
+    setTimeout(renderSchedules, 500);
+    return;
+  }
+  requestAction.onsuccess = () => {
+    alert("Berhasil simpan ke database!"); // Kalau ini muncul di HP, berarti DB aman
+    renderSchedules(true);
+  };
   getAllRequest.onsuccess = () => {
     const schedules = getAllRequest.result;
 
