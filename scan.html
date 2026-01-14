@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Scan Barcode - Jadwal Unikama</title>
+  </head>
+  <body>
+    <div class="container py-4">
+      <h4 class="fw-bold mb-4">Berbagi Jadwal</h4>
+
+      <ul
+        class="nav nav-pills nav-fill mb-4 bg-white p-1 rounded-pill shadow-sm"
+        id="pills-tab"
+        role="tablist"
+      >
+        <li class="nav-item">
+          <button
+            class="nav-link active rounded-pill"
+            id="pills-share-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-share"
+            type="button"
+          >
+            Bagi Data
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link rounded-pill"
+            id="pills-receive-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-receive"
+            type="button"
+          >
+            Terima Data
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-share" role="tabpanel">
+          <div class="card card-custom p-4 text-center">
+            <p class="text-muted small">
+              Minta temanmu scan kode ini untuk menyalin jadwalmu
+            </p>
+            <div id="qrcode" class="qr-placeholder mb-5 mt-5">
+              <i class="bi bi-qr-code text-muted h1"></i>
+            </div>
+            <button class="btn btn-primary w-100">Update Kode QR</button>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-receive" role="tabpanel">
+          <div class="card card-custom p-3 text-center">
+            <div
+              id="reader"
+              style="
+                width: 100%;
+                border-radius: 10px;
+                overflow: hidden;
+                background: #000;
+                min-height: 250px;
+              "
+            ></div>
+            <p class="mt-3 small text-muted">
+              Arahkan kamera ke QR teman untuk sinkronisasi otomatis
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-link"
+        ><i class="bi bi-house-door"></i>Home</a
+      >
+      <a href="scan.html" class="nav-link active"
+        ><i class="bi bi-qr-code-scan"></i>Scan Barcode</a
+      >
+    </nav>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/qrcode.min.js"></script>
+    <script src="assets/js/html5-qrcode.min.js"></script>
+    <script src="assets/js/barcode-logic.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+/* Layout Dasar Mobile */
+body {
+  padding-bottom: 80px;
+  background-color: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigasi Bawah (Bottom Bar) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+  text-align: center;
+  color: #8e8e93;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: 0.2s;
+}
+
+.nav-link.active {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.nav-link i {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Style Khusus Card & Button */
+.card-custom {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.qr-placeholder {
+  width: 200px;
+  height: 200px;
+  background: #eee;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+}
