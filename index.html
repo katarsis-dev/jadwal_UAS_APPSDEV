@@ -8,11 +8,14 @@
   <link rel="stylesheet" href="assets/css/bootstrap-icons.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <title>Home - Jadwal Unikama</title>
-  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-<script>eruda.init();</script>
+
 </head>
 
 <body>
+      <nav class="bottom-nav">
+      <a href="index.html" class="nav-link active"><i class="bi bi-house-door-fill"></i>Home</a>
+      <a href="scan.html" class="nav-link"><i class="bi bi-qr-code-scan"></i>Scan Barcode</a>
+    </nav>
   <div class="container py-3">
     <h4 class="mb-3">Jadwal Kuliah</h4>
     <div id="semesterSection" class="mb-3 d-none">
@@ -73,10 +76,7 @@
 
     <div id="scheduleListView" class="mt-4"></div>
 
-    <nav class="bottom-nav">
-      <a href="index.html" class="nav-link active"><i class="bi bi-house-door-fill"></i>Home</a>
-      <a href="scan.html" class="nav-link"><i class="bi bi-qr-code-scan"></i>Scan Barcode</a>
-    </nav>
+
 
     <div class="modal fade" id="modalManual" tabindex="-1" aria-labelledby="modalManualLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
