@@ -36,7 +36,7 @@ async function triggerAlarm(matkul, ruang) {
   if (Notification.permission === "granted") {
     new Notification("Waktunya Kuliah!", {
       body: `${matkul} di ruang ${ruang} akan mulai sebentar lagi!`,
-      icon: "assets/icons/icon-192x192.png",
+      icon: "assets/icons/logo.png",
     });
   }
 
