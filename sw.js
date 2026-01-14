@@ -20,7 +20,7 @@ const urlsToCache = [
   "./assets/js/worker.min.js",
   "./assets/js/tesseract-core-simd.wasm.js",
   "./assets/lang/ind.traineddata.gz",
-  "assets/icons/logo.png",
+  "./assets/icons/logo.png",
 ];
 
 self.addEventListener("install", (event) => {
